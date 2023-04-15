@@ -184,20 +184,20 @@ app.get("/about", function(req, res) {
 });
 
 
-// connectDB().then( () => {
- 
-//     app.listen(PORT, () => {
-   
-//         console.log(`Listening on port ${PORT}`)
-//     });
-// });
- 
- 
 connectDB().then( () => {
  
-    app.listen(PORT, function() {
+    app.listen(PORT, () => {
    
-        console.log("Server started. Listening on port " + PORT);
+        console.log(`Listening on port ${PORT}`)
     });
 });
+ 
+ 
+// connectDB().then( () => {
+ 
+//     app.listen(PORT, function() {
+   
+//         console.log("Server started. Listening on port " + PORT);
+//     });
+// });
  
