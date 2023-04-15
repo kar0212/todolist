@@ -21,34 +21,34 @@ app.set("view engine", "ejs");
  
 mongoose.set('strictQuery', false);
 
-// const connectDB = async () => {
-//     try {
-//        const conn = await mongoose.connect(process.env.MONGO_URI);
-        
-//        console.log(`MongoDB Connected: ${conn.connection.host}`);
- 
-//     } catch(error) {
-       
-//        console.log(error);
-//        process.exit(1);
-//     }
-// }
- 
-
-
- 
-async function connectDB() {
+const connectDB = async () => {
     try {
        const conn = await mongoose.connect(process.env.MONGO_URI);
         
-       console.log("MongoDB Connected: " + conn.connection.host);
+       console.log(`MongoDB Connected: ${conn.connection.host}`);
  
-    } catch(err) {
+    } catch(error) {
        
-       console.log(err);
+       console.log(error);
        process.exit(1);
     }
 }
+ 
+
+
+ 
+// async function connectDB() {
+//     try {
+//        const conn = await mongoose.connect(process.env.MONGO_URI);
+        
+//        console.log("MongoDB Connected: " + conn.connection.host);
+ 
+//     } catch(err) {
+       
+//        console.log(err);
+//        process.exit(1);
+//     }
+// }
  
 const itemSchema = new mongoose.Schema({
     name: String
